@@ -1,0 +1,6 @@
+What functionality I want to implement:
+- Timer : for processing metrics [DONE]
+- Place to input D/C, lot #, etc. w/ copy to clipboard buttons [DONE]
+- Weight//Volume conversion calculator
+- Standard calculator
+- Step-by-step links to places to find D/C, design code, etc.

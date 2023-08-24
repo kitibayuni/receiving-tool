@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Patrick's Receiving Tool</title>
+    <style>
+      .start-button{
+        background-color: green;
+      }
+      .pause-button{
+        background-color: red;
+        color: white;
+      }
+      .resume-button{
+        background-color: lightskyblue;
+      }
+      .division{
+        border: 2px solid black;
+        padding: 10px;
+        padding-top: 5px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.418);
+        border-radius: 5px;
+      }
+      .header{
+        font-weight: bold;
+        font-size: x-large;
+      }
+    </style>
+  </head>
+  <body>
+    <!--TIMER-->
+    <div class="division">
+      <p class="header">Timer</p>
+      <p id="timer">0h 0m 0s</p>
+      <button onclick="startStopTimer();" class="start-button" id="start-stop-button">Start</button>
+      <button onclick="resetTimer();" class="reset-button">Reset</button>
+      <br><br>
+    </div>
+    <br>
+    <!--TIMER END-->
+    <!--CLIPBOARD-->
+    <div class="division">
+      <p class="header">Clipboard</p>
+      <input placeholder="Previous Batch Barcode" id="p-batch-barcode"><button onclick="copyToClipboard('p-batch-barcode');">Copy To Clipboard</button>
+      <br>
+      <input placeholder="Design Code" id="design-code"><button onclick="copyToClipboard('design-code');">Copy To Clipboard</button>
+      <br>
+      <input placeholder="Lot #" id="lot-no"><button onclick="copyToClipboard('lot-no');">Copy To Clipboard</button>
+      <br>
+      <input placeholder="Address" id="address"><button onclick="copyToClipboard('address');">Copy To Clipboard</button>
+      <br>
+      <input placeholder="Owner/Requestor" id="owner-requestor"><button onclick="copyToClipboard('owner-requestor');">Copy To Clipboard</button>
+      <br>
+      <input placeholder="SHC // Batch Description" id="shc"><button onclick="copyToClipboard('shc');">Copy To Clipboard</button>
+      <br>
+      <input placeholder="Location" id="location"><button onclick="copyToClipboard('location');">Copy To Clipboard</button>
+      <br>
+      <input placeholder="Current Batch Barcode" id="c-batch-barcode"><button onclick="copyToClipboard('c-batch-barcode');">Copy To Clipboard</button>
+      <br><br>
+      <button onclick="resetClipboard();">RESET CLIPBOARD</button>
+    </div>
+    <br>
+    <!--CLIPBOARD END-->
+    <!--CONVERSION TOOL-->
+    <div class="division">
+      <p class="header">Conversion Tool</p>
+      <input placeholder="Weight" id="weight"><br>
+      <input placeholder="Volume" id="volume"><br>
+      <input placeholder="Density" id="density"><br>
+      <button onclick="convertAmount('');">Calculate</button>
+      <button onclick="convertAmount('reset');">Reset</button>
+    </div>
+    <br>
+    <!--CONVERSION TOOL END-->
+    <!--CALCULATOR-->
+    <div class="division">
+      <p class="header">Calculator</p>
+      <input placeholder="Type Calculation Here" id="calculation-entry">
+      <button onclick="calculate();">Calculate</button>
+      <br>
+      <p class="calculation-result"></p>
+    </div>
+    
+    <!--CALCULATOR TOOL END-->
+    <!--SCRIPTS-->
+    <script src="timer.js"></script>
+    <script src="copy-to-clipboard.js"></script>
+    <script src="conversion-tool.js"></script>
+    <script src="basic-calculator.js"></script>
+    <!--SCRIPTS END-->
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <p id="timer">timer</p>
+    <button onclick="startTimer()">Timer</button>
+    <button onclick="stopTimer()">Stop</button>
+    <button onclick="resetTimer()">Reset</button>
+    <script>
+      let timer;
+      let timerElement = document.getElementById('timer');
+      let time = {
+        sec: 0,
+        min: 0,
+        hr: 0
+      }
+      let timerId = 0;
+
+      function startTimer(){
+        if (timerId != 0){
+          return;
+        }
+        timerId = setInterval(add, 1000);
+      }
+
+      function add(){
+        time.sec++;
+        timerElement.innerHTML = `${time.sec}`;
+      }
+
+      function stopTimer(){
+        clearInterval(timerId);
+        timerId = 0;
+      }
+
+      function resetTimer(){
+        clearInterval(timerId);
+        timerId = 0;
+        time.sec = 0;
+        time.min = 0;
+        time.hr = 0;
+        timerElement.innerHTML = `${time.sec}`;
+      }
+    </script>
+  </body>
+</html>
